@@ -6,7 +6,10 @@ from azure.iot.device import IoTHubDeviceClient, Message, MethodResponse
 from counterfit_connection import CounterFitConnection
 CounterFitConnection.init('127.0.0.1', 5000)
 
-connection_string = 'HostName=ECM3440JetskiHub.azure-devices.net;DeviceId=soil-moisture-sensor;SharedAccessKey=ijkvLn9ZOI7/aw3IyoBnQdxOD7LM5MCC9/vtgmMDF5s='
+connection_string = (
+    'HostName=ECM3440JetskiHub.azure-devices.net;'
+    'DeviceId=soil-moisture-sensor;'
+    'SharedAccessKey=ijkvLn9ZOI7/aw3IyoBnQdxOD7LM5MCC9/vtgmMDF5s=')
 
 adc = ADC()
 relay = GroveRelay(5)
@@ -37,7 +40,7 @@ while True:
     soil_moisture = adc.read(0)
     print("Soil moisture:", soil_moisture)
 
-    message = Message(json.dumps({ 'soil_moisture': soil_moisture }))
+    message = Message(json.dumps({'soil_moisture': soil_moisture}))
     device_client.send_message(message)
 
     time.sleep(10)
