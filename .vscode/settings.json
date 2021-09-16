@@ -1,6 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./soil-moisture-sensor"
+        "./soil-moisture-sensor",
     ],
     "python.testing.pytestArgs": [
         "tests"

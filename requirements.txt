@@ -2,3 +2,6 @@ azure-iot-device
 CounterFit
 counterfit-connection
 counterfit-shims-grove
+mockito
+pytest
+flake8
